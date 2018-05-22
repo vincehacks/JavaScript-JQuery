@@ -159,6 +159,88 @@
 /******************************************************************************/
 
 // AJAX used to call api to render a search to movies
+// $(function(){
+//   $('form').on('submit',(event) => {
+//
+//     // Whatever the user types in the search box will be saved here
+//     var userInput = $('#input-box').val();
+//
+//     // Prevents the form from submitting so page doesn't reset
+//     event.preventDefault();
+//
+//
+//     $.ajax({
+//       url:'http://www.omdbapi.com/?apikey=53aa2cd6&s=' + userInput,
+//       method: "GET",
+//       success: function(data,status,jqXHR){
+//         console.log(data);
+//         data.Search.forEach(item => {
+//           for(property in item){
+//             $('ul').append('<li>' + property + item[property] + '</li>');
+//           }
+//         });
+//       },
+//       error: function(jqXHR,status,error){
+//         console.log('bad');
+//       }
+//     });
+//   });
+// });
+/******************************************************************************/
+
+// AJAX returns a promise!
+// $(function(){
+//
+//   var promise = $.ajax({
+//     url:'http://www.omdbapi.com/?apikey=53aa2cd6&s=star',
+//     method: "GET"
+//   });
+//
+//   // SOULUTION 1: This way works, but can shorthand it
+//   // promise.done(function(data){
+//   //   console.log('works');
+//   // });
+//   // promise.fail(function(error){
+//   //   console.log('works');
+//   // });
+//   // promise.always(function(){
+//   //   console.log('always runs');
+//   // });
+//
+//   // SOLUTION 2: This is more common and does the same above
+//   promise.then(
+//     function(data){
+//       console.log('success');
+//       console.log(data);
+//     },
+//     function(error){
+//       console.log('fail');
+//     }
+//   );
+// }); // End of Function
+
+/******************************************************************************/
+
+// SOLUTION 3, because Ajax returns a promise, do solution 2 and tack it on
+// $(function(){
+//
+//   var promise = $.ajax({
+//     url:'http://www.omdbapi.com/?apikey=53aa2cd6&s=star',
+//     method: "GET"
+//   }).then(
+//     function(data){
+//       console.log('success');
+//       console.log(data);
+//     },
+//     function(error){
+//       console.log('fail');
+//     }
+//   );
+// }); // End of Function
+
+/******************************************************************************/
+
+// AJAX LAB NOW DONE WITH PROMISES!
 $(function(){
   $('form').on('submit',(event) => {
 
@@ -168,20 +250,25 @@ $(function(){
     // Prevents the form from submitting so page doesn't reset
     event.preventDefault();
 
-    $.ajax({
+    var promise = $.ajax({
       url:'http://www.omdbapi.com/?apikey=53aa2cd6&s=' + userInput,
-      method: "GET",
-      success: function(data,status,jqXHR){
+      method: "GET"
+    }).then(
+      function(data){
+        $('ul').empty();
         console.log(data);
         data.Search.forEach(item => {
           for(property in item){
             $('ul').append('<li>' + property + item[property] + '</li>');
           }
+          console.log('\n');
         });
       },
-      error: function(jqXHR,status,error){
+      function(error){
         console.log('bad');
+        console.log(error);
       }
-    });
+    );
   });
 });
+/******************************************************************************/

@@ -92,7 +92,7 @@ console.log("\n");
 
 // ... Spread operator
 console.log("FUNCTION: spreadSum()");
-function spreadSum(...arrayParam){
+function spreadSum(...arrayParam){ // spreadSum(...arrayParam) == spreadSum([1,2,3,4,5])
   var sum = 0;
   for(var i = 0; i < arrayParam.length; i++){
     sum += arrayParam[i];
@@ -101,7 +101,7 @@ function spreadSum(...arrayParam){
   return sum;
 }
 
-const values = [1,2,3,4,5];
+const values = [1,2,3,4,5]; // spreadSum(..values) == spreadSum(1,2,3,4,5)
 console.log('1 + 2 + 3 + 4 + 5 = ' + spreadSum(...values)); // Results to 15
 console.log("\n");
 /******************************************************************************/
@@ -160,5 +160,35 @@ function arrayDestruction(){
   [a,,b] = [1,2,3,4];
   console.log('a is ' + a); // a = 1
   console.log('b is ' + b); // b = 3
-  console.log("\n");
-} arrayDestruction();
+}
+arrayDestruction();
+console.log("\n");
+/******************************************************************************/
+
+// ES6 Class practice
+function Car (name) {
+  console.log("FUNCTION: Car()");
+
+  // Private vars
+  let gas = 100;
+
+  // Private methods
+  const useGas = (amount) => {
+    gas -= amount;
+  }
+
+  // Public Methods
+  this.drive = (distance) => {
+    useGas(distance/5);
+  }
+  this.getGasLevel = () => {
+    return gas;
+  }
+}
+
+const myCar = new Car("Awesome Car");
+console.log('The starting gas level is ' + myCar.getGasLevel());
+myCar.drive(10);
+console.log('After driving 10 miles the gas level is ' + myCar.getGasLevel());
+console.log("\n");
+/******************************************************************************/
