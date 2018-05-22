@@ -1,0 +1,23 @@
+div.active{
+  background: red;
+}
+
+.yellow{
+  background: yellow;
+}
+
+table{
+  text-align: center;
+}
+
+.outside{
+  background:lightgreen;
+}
+
+.inside{
+  background:pink;
+}
+
+div{
+  padding:20px;
+}
