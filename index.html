@@ -12,33 +12,77 @@
     the server -->
     <!-- <script> function processJSON(data) { console.log(data); } </script>
     <script src="http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=processJSON&tags=monkey&tagmode=any&format=json"></script> -->
+
+    <!-- This script will print to the console if wifi is working or not -->
+    <script type="text/javascript">
+      $(function(){
+        $(window).on('offline', function(){
+          console.log('offline!');
+        });
+        $(window).on('online', function(){
+          console.log('online!');
+        });
+
+      })
+    </script>
+
+    <!-- Manupulation to storage on the browser, this acts as a database-->
+    <script type="text/javascript">
+      /* Setting an item (key,value)
+       * Session storage lasts until you close the window, and localStorage will
+       * stay there until you specify you want to delete it
+       */
+      localStorage.setItem('foo', 'bar');
+      localStorage.setItem('key', 'value');
+      sessionStorage.setItem('age', 2); // Note this will be converted to a str
+      sessionStorage.setItem('me', 26);
+
+      // Getting an item
+      localStorage.getItem('foo'); // 'bar'
+      // 2 - note this is a string, even though, it was set as a number
+      sessionStorage.getItem('age');
+      // Remove an item
+      localStorage.removeItem('foo');
+      sessionStorage.removeItem('age');
+
+      // Clear the storage, uncommment, if you want to see items in the storage
+      localStorage.clear();
+      sessionStorage.clear();
+
+      // This is for converting the {foo:'bar'} into
+      localStorage.setItem('myArray',
+      JSON.stringify([1,'apple',true,{foo:'bar'}]));
+      console.log(JSON.parse(localStorage.getItem('myArray')));
+    </script>
+
   </head>
   <body>
     <!-- This will have a JQurey listener! -->
-    <button type="button" name="button" id="btn">Click Me</button>
+    <!-- <button type="button" name="button" id="btn">Click Me</button> -->
 
     <!-- Lab that demonstrates keyup -->
-    <input type="text" name="" value=""/>
+    <!-- <input type="text" name="" value=""/> -->
     <!-- Code will be injected here from JQuery -->
-    <table id="table"></table>
+    <!-- <table id="table"></table> -->
 
     <!-- <div></div> -->
 
     <!-- Testing out Bubbling -->
-    <div class="outside">
-      Click me..?
+    <!-- <div class="outside"> -->
+      <!-- Click me..?
       <div class="inside">
       </div>
-    </div>
+    </div> -->
 
     <!-- Prevent Default Example -->
     <form>
-      <input type="text" placeholder="enter your name" id="input-box"/>
+      <h1 style="border: 5px solid white; display:inline"> OMDB API FOR MOVIES! <h1>
+      <input type="text" placeholder="Enter a movie title" id="input-box"/>
       <input type="submit" value="SUBMIT"/>
     </form>
 
-    <!-- Throwing the movies into this list by using Jquery -->
-    <ul></ul>
+    <!-- Throwing the movies into this div by using Jquery -->
+    <div></div>
 
   </body>
 </html>

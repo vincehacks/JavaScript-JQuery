@@ -22,8 +22,19 @@
 // Uncomment this to practice ReactJS
 import ReactDOM from 'react-dom'; //import react-dom from npm install dir
 import React from 'react'; //import react from npm install dir
+import Heading from './heading.js';
+
+// const user = 'Vince';
+// const formatUser = (userName) => {
+//   return userName + '!!';
+// }
+//
+// const myJSX = <h2> Hello {formatUser(user)} </h2>;
 
 ReactDOM.render(
-  <h1>FUNNNNNNN IT LOADS EVERYTIME I SAVE yooooooooo!!</h1>,
+  <section>
+    <Heading name="Vince" userType="admin"></Heading>
+    <Heading name="Chang"></Heading>
+  </section>,
   document.querySelector('main')
 );

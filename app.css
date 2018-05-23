@@ -18,6 +18,17 @@ table{
   background:pink;
 }
 
+body{
+  background:black;
+  font-size:15px;
+  color:white;
+  font-family:fantasy;
+}
+form{
+  text-align:center;
+  padding-top:50px;
+}
+
 div{
-  padding:20px;
+  text-align:center;
 }

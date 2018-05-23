@@ -255,13 +255,16 @@ $(function(){
       method: "GET"
     }).then(
       function(data){
-        $('ul').empty();
+        // $('div').empty();
         console.log(data);
         data.Search.forEach(item => {
-          for(property in item){
-            $('ul').append('<li>' + property + item[property] + '</li>');
-          }
-          console.log('\n');
+          $('div').append('Title'  + ': ' + item.Title + '</br>');
+          $('div').append('Year'   + ': ' + item.Year + '</br>');
+          $('div').append('imdbID' + ': ' + item.imdbID + '</br>');
+          $('div').append('Type'   + ': ' + item.Type + '</br>');
+          $('div').append("<img src='" + item.Poster + "'><hr>");
+
+          //$('ul').append('</br>'); // Space out information per movie
         });
       },
       function(error){
