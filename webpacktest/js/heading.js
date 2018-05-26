@@ -1,3 +1,5 @@
+// Created by Vince Chang
+
 import React from 'react';
 
 export default class Heading extends React.Component{
