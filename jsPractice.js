@@ -92,7 +92,8 @@ console.log("\n");
 
 // ... Spread operator
 console.log("FUNCTION: spreadSum()");
-function spreadSum(...arrayParam){ // spreadSum(...arrayParam) == spreadSum([1,2,3,4,5])
+// spreadSum(...arrayParam) == spreadSum([1,2,3,4,5])
+function spreadSum(...arrayParam){
   var sum = 0;
   for(var i = 0; i < arrayParam.length; i++){
     sum += arrayParam[i];
