@@ -28,22 +28,38 @@ function buttonClick(value) {
   else {
     handleNumber(value);
   }
+
+  // Call to update the screen with the new number
+  rerender();
 }
 
 // If the user clicks on a Operator
 function handleOperator(value) {
-  switch(value){
-    case: 'C':
+  switch (value) {
+    case "C":
       buffer = "0";
       runningTotal = 0;
       break;
-    case: '=':
-      if(!previousOperator){
+    case "=":
+      if (previousOperator === null) {
         return;
       }
-      else{ // Do the operation
-        flushOperation(parseInt(value));
+      // Do the operation
+      flushOperation(parseInt(buffer));
+      previousOperator = null;
+      buffer = +runningTotal;
+      runningTotal = 0;
+      break;
+    case "←":
+      if (buffer.length === 1) {
+        buffer = "0";
+      } else {
+        buffer = buffer.substring(0, buffer.length - 1);
       }
+      break;
+    default:
+      handleMath(value);
+      break;
   }
 }
 
@@ -57,8 +73,36 @@ function handleNumber(value) {
   else {
     buffer += value;
   }
-  // Call to update the screen with the new number
-  rerender();
+}
+
+// Handle either + -  * /
+function handleMath(value) {
+  const intBuffer = parseInt(buffer);
+
+  // If there's nothing in runningTotal, just remember the number
+  if (runningTotal === 0) {
+    runningTotal = intBuffer;
+  } else {
+    // Need to do some math
+    flushOperation(intBuffer);
+  }
+
+  previousOperator = value;
+
+  // Reset buffer
+  buffer = "0";
+}
+
+function flushOperation(intBuffer) {
+  if (previousOperator === "+") {
+    runningTotal += intBuffer;
+  } else if (previousOperator === "-") {
+    runningTotal -= intBuffer;
+  } else if (previousOperator === "×") {
+    runningTotal *= intBuffer;
+  } else {
+    runningTotal /= intBuffer;
+  }
 }
 
 // Updating the screen with what is in buffer

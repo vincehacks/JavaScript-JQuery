@@ -1,34 +1,34 @@
-div.active{
+div.active {
   background: red;
 }
 
-.yellow{
+.yellow {
   background: yellow;
 }
 
-table{
+table {
   text-align: center;
 }
 
-.outside{
-  background:lightgreen;
+.outside {
+  background: lightgreen;
 }
 
-.inside{
-  background:pink;
+.inside {
+  background: pink;
 }
 
-body{
-  background:black;
-  font-size:15px;
-  color:white;
-  font-family:fantasy;
+body {
+  background: black;
+  font-size: 15px;
+  color: white;
+  font-family: fantasy;
 }
-form{
-  text-align:center;
-  padding-top:50px;
+form {
+  text-align: center;
+  padding-top: 50px;
 }
 
-div{
-  text-align:center;
+div {
+  text-align: center;
 }
