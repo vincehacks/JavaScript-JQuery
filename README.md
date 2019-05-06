@@ -13,7 +13,7 @@ Topics:
 ### Calculator
 
 - Calculator that will do basic functionality. Built with pure HTML, CSS, and JS
-  ![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProduct.png)
+  ![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProject.png)
 
 #### JS:
 
