@@ -9,3 +9,5 @@ describe("multBy2", function(){
     expect(multBy2(2)).toBe(4);
   });
 });
+
+// end of test
