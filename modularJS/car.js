@@ -1,7 +1,7 @@
 // Created by Vince Chang
 
-define([], function() {
-  const Car = function(name) {
+define([], function () {
+  const Car = function (name) {
     // Private var
     let gas = 100;
 

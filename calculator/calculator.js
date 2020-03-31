@@ -14,7 +14,7 @@ const screen = document.querySelector(".screen");
 // Binding
 document
   .querySelector(".calc-buttons")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     buttonClick(event.target.innerText);
   });
 

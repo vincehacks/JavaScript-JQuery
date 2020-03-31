@@ -1,7 +1,7 @@
 // Created by Vince Chang
 
 // BASICS
-$(function() {
+$(function () {
   $("div").html("oh hai!!");
 
   // CREATING NEW ELEMENTS: and appending it to the DOM then using setTimeout to
@@ -9,7 +9,7 @@ $(function() {
   const newSpan = $("<span>");
   newSpan.html("this is a span");
   $("div").append(newSpan);
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     $("div span").remove();
   }, 1000);
 
@@ -39,7 +39,7 @@ const Somehandler = () => {
   $("body").toggleClass("yellow");
 }; // End of Somehandler
 
-$(function() {
+$(function () {
   const btn = $("#btn");
   // Can do things when you click, hover, mouseenter, mouseleave, mouseover
   btn.on("click", Somehandler);
@@ -56,9 +56,9 @@ $(function() {
  * display that movie's info on your page somewhere
  */
 
-$(function() {
+$(function () {
   // Listening for activity in the input field
-  $("input").on("keyup", function(event) {
+  $("input").on("keyup", function (event) {
     var movies = [
       {
         title: "Avengers 3",
@@ -77,7 +77,7 @@ $(function() {
     ];
 
     // If movie matches, it is put back into foundMovies [] and then I print it
-    var foundMovies = movies.filter(function(movie) {
+    var foundMovies = movies.filter(function (movie) {
       return movie.title === event.target.value;
     });
     console.log(foundMovies);
@@ -90,20 +90,20 @@ $(function() {
       // Creating the HTML table that will store all the information
       $table.html(
         "<tr><th>Title</th></tr><td>" +
-          foundMovies[i].title +
-          "</td>" +
-          "<tr><th>Release Date</th></tr><td>" +
-          foundMovies[i].releaseDate +
-          "</td>" +
-          "<tr><th>Rating</th></tr><td>" +
-          foundMovies[i].rating +
-          "</td>" +
-          "<tr><th>Director</th></tr><td>" +
-          foundMovies[i].director +
-          "</td>" +
-          "<tr><th>Actors</th></tr><td>" +
-          foundMovies[i].actors +
-          "</td>"
+        foundMovies[i].title +
+        "</td>" +
+        "<tr><th>Release Date</th></tr><td>" +
+        foundMovies[i].releaseDate +
+        "</td>" +
+        "<tr><th>Rating</th></tr><td>" +
+        foundMovies[i].rating +
+        "</td>" +
+        "<tr><th>Director</th></tr><td>" +
+        foundMovies[i].director +
+        "</td>" +
+        "<tr><th>Actors</th></tr><td>" +
+        foundMovies[i].actors +
+        "</td>"
       );
 
       // Append the information to the body
@@ -113,7 +113,7 @@ $(function() {
 }); // End of function
 // /******************************************************************************/
 // BUBBLING
-$(function() {
+$(function () {
   // event.target is what is clicked on
   // currentTarget has the listener on it!
 
@@ -139,14 +139,14 @@ $(function() {
 });
 /******************************************************************************/
 // CHANGE CSS WITH JQUERY, this will change the what you click on to yellow
-$(function() {
-  $(".outside").on("click", function() {
+$(function () {
+  $(".outside").on("click", function () {
     $(event.currentTarget).css("background", "yellow");
   });
 });
 /******************************************************************************/
 // USING A FORM'S SUBMIT EVENT
-$(function() {
+$(function () {
   const list = [];
 
   const render = () => {
@@ -169,7 +169,7 @@ $(function() {
 /******************************************************************************/
 
 // AJAX used to call api to render a search to movies
-$(function() {
+$(function () {
   $("form").on("submit", event => {
     // Whatever the user types in the search box will be saved here
     var userInput = $("#input-box").val();
@@ -180,7 +180,7 @@ $(function() {
     $.ajax({
       url: "http://www.omdbapi.com/?apikey=53aa2cd6&s=" + userInput,
       method: "GET",
-      success: function(data, status, jqXHR) {
+      success: function (data, status, jqXHR) {
         console.log(data);
         data.Search.forEach(item => {
           for (property in item) {
@@ -188,7 +188,7 @@ $(function() {
           }
         });
       },
-      error: function(jqXHR, status, error) {
+      error: function (jqXHR, status, error) {
         console.log("bad");
       }
     });
@@ -197,7 +197,7 @@ $(function() {
 /******************************************************************************/
 
 // AJAX returns a promise!
-$(function() {
+$(function () {
   var promise = $.ajax({
     url: "http://www.omdbapi.com/?apikey=53aa2cd6&s=star",
     method: "GET"
@@ -216,11 +216,11 @@ $(function() {
 
   // SOLUTION 2: This is more common and does the same above
   promise.then(
-    function(data) {
+    function (data) {
       console.log("success");
       console.log(data);
     },
-    function(error) {
+    function (error) {
       console.log("fail");
     }
   );
@@ -229,16 +229,16 @@ $(function() {
 /******************************************************************************/
 
 // SOLUTION 3, because Ajax returns a promise, do solution 2 and tack it on
-$(function() {
+$(function () {
   var promise = $.ajax({
     url: "http://www.omdbapi.com/?apikey=53aa2cd6&s=star",
     method: "GET"
   }).then(
-    function(data) {
+    function (data) {
       console.log("success");
       console.log(data);
     },
-    function(error) {
+    function (error) {
       console.log("fail");
     }
   );
@@ -247,7 +247,7 @@ $(function() {
 /******************************************************************************/
 
 // AJAX LAB NOW DONE WITH PROMISES!
-$(function() {
+$(function () {
   $("form").on("submit", event => {
     // Whatever the user types in the search box will be saved here
     var userInput = $("#input-box").val();
@@ -259,7 +259,7 @@ $(function() {
       url: "http://www.omdbapi.com/?apikey=53aa2cd6&s=" + userInput,
       method: "GET"
     }).then(
-      function(data) {
+      function (data) {
         // $('div').empty();
         console.log(data);
         data.Search.forEach(item => {
@@ -272,7 +272,7 @@ $(function() {
           //$('ul').append('</br>'); // Space out information per movie
         });
       },
-      function(error) {
+      function (error) {
         console.log("bad");
         console.log(error);
       }

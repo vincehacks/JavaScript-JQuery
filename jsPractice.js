@@ -5,10 +5,10 @@
 function Person1(name, friends) {
   this.name = name;
   this.friends = friends;
-  this.logName = function() {
+  this.logName = function () {
     console.log(this.name);
   };
-  this.logFriends = function() {
+  this.logFriends = function () {
     this.friends.forEach(friend => {
       console.log(this.friends);
     });
@@ -63,7 +63,7 @@ console.log("\n");
 // Using a default value, 3 ways to do this:
 // Pass in a default value, use ternary operator, or the || operator
 console.log("FUNCTION: multBy2()");
-var multBy2 = function(value = 2) {
+var multBy2 = function (value = 2) {
   // Ternary
   // var defaultVal = (value)?value:0;
 

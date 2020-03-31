@@ -16,7 +16,7 @@ module.exports = {
         use: {
           loader: 'babel-loader', //use the babel loader to load:
           options: {
-            presets: ["es2015" , "react"] //the es2015 compiler
+            presets: ["es2015", "react"] //the es2015 compiler
           }
         }
       }
