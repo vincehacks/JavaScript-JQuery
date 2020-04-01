@@ -35,7 +35,37 @@ Topics:
 .pop()
 .push()
 .map()
+.flat()
 ```
+
+#### Scope Functions
+
+```
+.call() , takes a lot of arguments, calls the function
+.apply(), takes a lot of arguments, calls the function
+.bind(), changes scope without calling the actual function itself, executes later
+```
+
+#### Timing Functions
+
+```
+.setInterval()
+.setTimeout()
+```
+
+- Debounce: A way of stopping something from doing it too much
+  - Ex. Auto complete: Do not want to fire a search for everything I type, so I
+    can set up a interval to only send request after some time after
+
+#### Promises
+
+```
+.setInterval()
+.setTimeout()
+```
+
+- Promises to return something eventually
+- A.K.A asynchronous wait
 
 #### Common Interview Questions
 
@@ -53,7 +83,7 @@ Topics:
 
 3. What is this in JavaScript ?
 
-   - this refers to the current scope which can change, otherwise it is refered
+   - this refers to the current scope which can change, otherwise it is referred
      to as the Global Window Object
 
 4. What is the Data Structure of the DOM?
