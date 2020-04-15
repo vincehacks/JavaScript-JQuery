@@ -4,8 +4,8 @@
 
 const multBy2 = require('./multBy2.js');
 
-describe("multBy2", function(){
-  it("Should multiply a value by 2",function(){
+describe("multBy2", function () {
+  it("Should multiply a value by 2", function () {
     expect(multBy2(2)).toBe(4);
   });
 });

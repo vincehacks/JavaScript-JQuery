@@ -1,5 +1,5 @@
 // Created by Vince Chang
-// This is an indivdual file that has a function that will be tested in suite.js
+// This file has a function that will be tested in suite.js
 
 const addParams = (param1, param2) => {
   if (typeof param1 === "string" || typeof param2 === "string") {
