@@ -10,21 +10,39 @@ Topics:
 - RequireJS
 - ES6
 
-### Calculator
+### CALCULATOR
 
 - Calculator that will do basic functionality. Built with pure HTML, CSS, and JS
 
 ![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProject.png)
 
-#### JS:
+#### JAVASCRIPT:
 
+- Light weight interpreted language with first-class functions
+- Prototype based
+- Dynamic Typed Language: don't need to specify the data type a var will contain
+- Object Oriented
 - JS is single threaded not like java
 - Js does everything camelCase
-- Always use let never use var
-  - Scope is the difference and
-  - Let has block level scope and var has function level scope
 
-#### Helpful Built in functions for Arrays
+#### DIFFERENCE BETWEEN VAR AND LET
+
+**var**
+
+- You can declare a var after it has been initialized and it will still work
+  (variable hoisting)
+- Can declare the same variable as many times are you like
+
+**let**
+
+- This is preferred over using var
+- Works the same way as you would use it in Java
+
+- Always use let never use var
+- Scope is the difference and
+- Let has block level scope and var has function level scope
+
+#### BUILT IN FUNCTIONS FOR ARRAYS
 
 ```
 .isArray()
@@ -38,7 +56,33 @@ Topics:
 .flat()
 ```
 
-#### Scope Functions
+#### ANONYMOUS FUNCTIONS
+
+- Functions with no name
+- Used with event handlers
+- Can be saved into a var
+
+#### JAVASCRIPT OOP
+
+**Encapsulated**
+
+- Object data/functions can be stored in an object package (namespace)
+
+**Polymorphism**
+
+- Ability of multiple object types to implement the same functionality
+
+#### OBJECT PROTOTYPES
+
+- To provide inheritance, object have have:
+  **Prototype object**
+  - Template object that it inherits methods and properties from
+    **Prototype chain**
+  - Cycle of object prototypes having object prototypes
+
+**Everything inherits from Object.Prototype !!**
+
+#### SCOPE FUNCTIONS
 
 ```
 .call() , takes a lot of arguments, calls the function
@@ -46,7 +90,7 @@ Topics:
 .bind(), changes scope without calling the actual function itself, executes later
 ```
 
-#### Timing Functions
+#### TIMING FUNCTIONS
 
 ```
 .setInterval()
@@ -57,7 +101,7 @@ Topics:
   - Ex. Auto complete: Do not want to fire a search for everything I type, so I
     can set up a interval to only send request after some time after
 
-#### Promises
+#### PROMISES
 
 ```
 .setInterval()
@@ -67,7 +111,7 @@ Topics:
 - Promises to return something eventually
 - A.K.A asynchronous wait
 
-#### Common Interview Questions
+#### COMMON INTERVIEW QUESTIONS
 
 1. What is the difference between const, let, and var ?
 
