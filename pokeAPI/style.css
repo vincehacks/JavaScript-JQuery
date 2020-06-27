@@ -1,0 +1,17 @@
+/* Created by: Vince Chang */
+
+.pokemon {
+  display: flex;
+  border: 5px solid black;
+  margin: 100px;
+}
+
+.name {
+  justify-content: center;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.details {
+  flex-direction: column;
+}
