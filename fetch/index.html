@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Practice</title>
+  </head>
+  <body>
+    <img src="" id="pokemon" width="500" height="500" />
+    <script>
+      console.log('About to fetch a pokemon');
+
+      // SHORTER VERSION
+      // Async, this is a different way to fetch without using .then()
+      catchPokemon().catch((error) => {
+        console.error(error);
+      });
+
+      async function catchPokemon() {
+        // When fetch is done getting what it needs, it will "await" for the
+        // response
+        const response = await fetch('sq.jpeg');
+        const blob = await response.blob();
+        document.getElementById('pokemon').src = URL.createObjectURL(blob);
+      }
+
+      // THIS IS THE LONGER VERSION
+      // fetch('sq.jpeg')
+      //   .then((response) => {
+      //     console.log(response);
+      //     return response.blob(); // Convert the promise to an img blob
+      //   })
+      //   .then((blob) => {
+      //     // Use this new promise to print
+      //     console.log(blob);
+      //     document.getElementById('pokemon').src = URL.createObjectURL(blob);
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //   });
+    </script>
+  </body>
+</html>
