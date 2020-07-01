@@ -8,16 +8,16 @@ Practicing basic functionality of JS and/or JQuery
 
 - Calculator that will do basic functionality. Built with pure HTML, CSS, and JS
 
-![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProject.png)
+![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProduct.png)
 
 ### FETCH CSV
 
 - Building a graph from a downloaded CSV file from Nasa that shows the average
   differences from year to year in temperature. The data will show that each year,
   the rise in temperature in the world which warns us about Global Warming.
-- Built using (Chart JS)[https://www.chartjs.org/]
+- Built using [Chart JS](https://www.chartjs.org/)
 
-![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/fetchCSV/FinalProject.png)
+![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/fetchCSV/FinalProduct.png)
 
 #### JAVASCRIPT:
 
