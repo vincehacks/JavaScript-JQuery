@@ -16,8 +16,23 @@ Practicing basic functionality of JS and/or JQuery
   differences from year to year in temperature. The data will show that each year,
   the rise in temperature in the world which warns us about Global Warming.
 - Built using [Chart JS](https://www.chartjs.org/)
+- Start by running live-server
 
 ![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/fetchCSV/FinalProduct.png)
+
+### INTERNATIONAL SPACE STATION
+
+- Building a real time map that plots the exact location of the International
+  Space Station as it revolves around the Earth.
+- Utilizing the [WhereTheISS.at](https://wheretheiss.at/w/developer) API that
+  gives you the current latitude and longitude of the ISS, along with other
+  features of the ISS.
+- Utilizing [leaflet](https://leafletjs.com/reference-1.6.0.html#marker) which
+  is an open source mapping library, but could also try to use Google Maps and
+  MapBox as well
+- Start by running live-server
+
+![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/space-station/FinalProduct.png)
 
 #### JAVASCRIPT:
 

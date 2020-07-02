@@ -1,0 +1,98 @@
+<!-- Created by: Vince Chang -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISS Location</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <style>
+      #issMap {
+        height: 180px;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Where is the ISS?</h1>
+    <p>The longitude: <span id="long"></span>°<br /></p>
+    <p>The latitude: <span id="lat"></span>°<br /></p>
+    <p>The altitude: <span id="alt"></span><br /></p>
+    <p>The velocity: <span id="vel"></span><br /></p>
+    <div id="issMap"></div>
+
+    <script>
+      // CREATE MAP
+      // This will display the outline of the map but not the tiles, since the
+      // leaflet library is loaded, "L" is a leaflet object that can be used
+      const mymap = L.map('issMap').setView([0, 0], 1);
+
+      // CREATE TILES
+      // Required to show the attributes, then can create tiles
+      const attribution =
+        '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
+      const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      const tiles = L.tileLayer(tileURL, { attribution });
+      tiles.addTo(mymap);
+
+      // CREATE MARKER AND UPDATE ICON
+      var myIcon = L.icon({
+        iconUrl: 'ISS.png',
+        iconSize: [50, 32],
+        iconAnchor: [25, 16],
+      });
+      const marker = L.marker([0, 0], { icon: myIcon }).addTo(mymap);
+
+      // Trick to only set the view once and not every time getISS() is called
+      let firstTime = true;
+
+      // GET THE DATA OF THE ISS
+      const iss_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+      async function getISS() {
+        const response = await fetch(iss_url);
+        const data = await response.json();
+        console.log(data);
+
+        // SHORT WAY using destructuring
+        const { longitude, latitude, altitude, velocity } = data;
+
+        // LONG WAY, for each field, use the data object and refer the name
+        // const longitude = data.longitude;
+        // const latitude = data.latitude;
+        // const altitude = data.altitude;
+        // const velocity = data.velocity
+        console.log('Current latitude ' + data.latitude);
+        console.log('Current longitude: ' + data.longitude);
+        console.log('Current altitude: ' + data.altitude);
+        console.log('Current velocity: ' + data.velocity);
+
+        // Set the marker to the longitude and latitude
+        marker.setLatLng([latitude, longitude]);
+        if (firstTime) {
+          mymap.setView([latitude, longitude], 2);
+          firstTime = false;
+        }
+        // Use the queried coordinates to populate in the HTML
+        document.getElementById('long').textContent = longitude.toFixed(2);
+        document.getElementById('lat').textContent = latitude.toFixed(2);
+        document.getElementById('alt').textContent = altitude.toFixed(2);
+        document.getElementById('vel').textContent = velocity.toFixed(2);
+      }
+
+      // Call the function
+      getISS();
+
+      // Set interval to refresh the map for new coordinates every 1000ms
+      setInterval(getISS, 1000);
+    </script>
+  </body>
+</html>
