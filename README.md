@@ -23,7 +23,9 @@ Practicing basic functionality of JS and/or JQuery
 ### INTERNATIONAL SPACE STATION
 
 - Building a real time map that plots the exact location of the International
-  Space Station as it revolves around the Earth.
+  Space Station as it revolves around the Earth. The map will refresh to the
+  position of the actual space station every 1000ms and update the exact
+  coordinates, altitude, and velocity.
 - Utilizing the [WhereTheISS.at](https://wheretheiss.at/w/developer) API that
   gives you the current latitude and longitude of the ISS, along with other
   features of the ISS.
