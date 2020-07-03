@@ -1,4 +1,4 @@
-# JavaScript-JQuery
+# JAVASCRIPT
 
 Created by Vince Chang </br>
 
@@ -36,7 +36,7 @@ Practicing basic functionality of JS and/or JQuery
 
 ![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/space-station/FinalProduct.png)
 
-#### JAVASCRIPT:
+#### JAVASCRIPT
 
 - Light weight interpreted language with first-class functions
 - Prototype based
