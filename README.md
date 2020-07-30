@@ -7,10 +7,11 @@ Practicing basic functionality of JS and/or JQuery
 ### CALCULATOR
 
 - Calculator that will do basic functionality. Built with pure HTML, CSS, and JS
+<p align="center">
+<img src="https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProduct.png"/>
+</p>
 
-![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/calculator/FinalProduct.png)
-
-### FETCH CSV
+#### FETCH CSV
 
 - Building a graph from a downloaded CSV file from Nasa that shows the average
   differences from year to year in temperature. The data will show that each year,
@@ -18,9 +19,11 @@ Practicing basic functionality of JS and/or JQuery
 - Built using [Chart JS](https://www.chartjs.org/)
 - Start by running live-server
 
-![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/fetchCSV/FinalProduct.png)
+<p align="center">
+<img src="https://github.com/vincehacks/JavaScript-JQuery/blob/master/fetchCSV/FinalProduct.png"/>
+</p>
 
-### INTERNATIONAL SPACE STATION
+#### INTERNATIONAL SPACE STATION
 
 - Building a real time map that plots the exact location of the International
   Space Station as it revolves around the Earth. The map will refresh to the
@@ -34,7 +37,9 @@ Practicing basic functionality of JS and/or JQuery
   MapBox as well
 - Start by running live-server
 
-![Final Product](https://github.com/vincehacks/JavaScript-JQuery/blob/master/space-station/FinalProduct.png)
+<p align="center">
+<img src="https://github.com/vincehacks/JavaScript-JQuery/blob/master/space-station/FinalProduct.png"/>
+</p>
 
 #### JAVASCRIPT
 
